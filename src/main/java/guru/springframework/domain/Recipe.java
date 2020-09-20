@@ -1,6 +1,7 @@
 package guru.springframework.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Recipe {
@@ -20,6 +21,9 @@ public class Recipe {
     private String source;
 
     private String directions;
+
+    @ManyToMany
+    private Set<Category> categories;
 
     @Enumerated(value = EnumType.STRING)
     private Difficulty difficulty;
